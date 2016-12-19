@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+@if (ViewBag.Message != null)
+{
+    <h4>@ViewBag.Message</h4>
+    <hr />
+}
+
+<h2>Hello Selenium ...</h2>
+<h3>Click here to begin the test ...</h3>
+
+@using (Html.BeginForm())
+{
+    <input type="submit" id="btnContinue" value="Continue" class="btn btn-primary" />
+}

@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "LogOut";
+}
+
+
+
+@using (Html.BeginForm("LogOut", "TestScenario", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    <h2>LogOut</h2>
+    <hr />
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Click here to LogOut ..." class="btn btn-danger" />
+        </div>
+    </div>
+}

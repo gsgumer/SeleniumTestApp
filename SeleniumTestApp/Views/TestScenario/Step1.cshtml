@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "Step1";
+}
+
+@if (ViewBag.Error != null)
+{
+    <h3 style="color:red">@ViewBag.Error</h3>
+}
+
+@using (Html.BeginForm("Step1", "TestScenario", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    <h2>Step1</h2>
+    <hr />
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+
+    <div class="form-group">
+        @Html.Label("Username", new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextBox("txtUsername", null, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.Label("Password", new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.Password("txtPassword", null, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.Label("Code", new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.Password("txtCode", null, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Continue" class="btn btn-primary" />
+        </div>
+    </div>
+}
+
+<br />
+<h3>Notes</h3>
+<br />
+<h4><b>Username:</b> element has the ID <i>txtUsername</i>. In order to continue, the value must be <pre>admin</pre></h4>
+<h4><b>Password:</b> element has the ID <i>txtPassword</i>. In order to continue, the value must be <pre>password</pre></h4>
+<h4><b>Code:</b> element has the ID <i>txtCode</i>. In order to continue, the value must be <pre>12345</pre></h4>
